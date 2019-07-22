@@ -8,14 +8,14 @@
    <title>English-reading</title>
 </head>
 <body>
-   <button class="butChangeFonts hidden">CHANGE FONTS</button>
-   
-   <p>
-      There was forest all round. All round for hundreds of kilometres. And there were no roads in the forest. There were only tracks.
-Two tents stood in a clearing. Two men were standing near the tents. The younger man, Manuel, was making coffee on a small stove. He looked up at the sky.
-Its going to rain today, he said.
-   </p>
-   <button><a href="#outputID">Кнопка</a></button>
+  
+   <div class="overlay hidden">
+      <p id="outputID" class="output"></p>
+      <button class="butChangeFonts hidden">CHANGE FONTS</button>
+      <button class="butStartReading hidden">START</button>   
+   </div>
+  
+   <button><a href="#outputID">Кнопка</a></button><br>
    <textarea name="text" cols="100" rows="10">
       There was forest all round. All round for hundreds of kilometres. And there were no roads in the forest. There were only tracks.
       Two tents stood in a clearing. Two men were standing near the tents. The younger man, Manuel, was making coffee on a small stove. He looked up at the sky.
@@ -198,7 +198,8 @@ Its going to rain today, he said.
       And they all laughed.
    </textarea>
    
-   <p id="outputID" class="output"></p>
+   
+   
 
    <script src="script.js"></script>
 </body>

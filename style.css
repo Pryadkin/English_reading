@@ -13,25 +13,42 @@ button a {
    text-decoration: none;
    color: black;
 }
-.butChangeFonts {
+.butChangeFonts, .butStartReading {
    position: fixed;
    width: 80px;
    height: 80px;
-   right: 50px;
+   right: 10px;
    border-radius: 10px;
    outline: none;
    background: #ca852a;
    color: white;
 }
+.butStartReading {
+   left: 10px;
+}
+.hidden {
+   display: none;
+}
+
 .output {
-   background-color: lightgrey;
+   position: absolute;
+   background-color: lightgrey;   	   
    padding: 20px;
    font-size: 24px;
    font-family: 'Mali', cursive;
    line-height: 40px;
-   width: 60%;
-   margin: auto;
+   width: 80%;
+   top: 0;
+   left: 50%;
+   transform: translateX(-50%);
 }
-.hidden {
-   display: none;
+
+.overlay {
+   position: absolute;
+   background-color: rgba(0, 0, 0, 0.8);
+   background-attachment: fixed;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
 }
