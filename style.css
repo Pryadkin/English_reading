@@ -9,11 +9,13 @@ font-family: 'Alike Angular', serif;
 button {
    display: block;
 }
+
 button a {
    text-decoration: none;
    color: black;
 }
-.butChangeFonts, .butStartReading {
+
+.but {
    position: fixed;
    width: 80px;
    height: 80px;
@@ -22,26 +24,39 @@ button a {
    outline: none;
    background: #ca852a;
    color: white;
+   cursor: pointer;
 }
+
 .butStartReading {
    left: 10px;
 }
+
+.butExit {
+   left: 10px;
+   top: 100px;
+}
+
 .hidden {
    display: none;
 }
 
 .output {
    position: absolute;
-   background-color: lightgrey;   	   
+   background-color: lightgrey;
    padding: 20px;
    font-size: 24px;
    font-family: 'Mali', cursive;
    line-height: 40px;
-   width: 80%;
+   width: 60%;
    top: 0;
    left: 50%;
-   transform: translateX(-50%);
+   transform: translateX(-70%);
+   border-radius: 10px;
 }
+
+/* .words {
+
+} */
 
 .overlay {
    position: absolute;
