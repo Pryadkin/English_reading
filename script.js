@@ -65,15 +65,20 @@ function getAmountWords() {
 
 
    let result;
+   // console.log(regexp.exec(str))
+   // console.log(regexp.lastIndex)
    // let i = 0;
-   while (regexp.exec(str)) {
+   while (result = regexp.exec(str)) {
    // while (i < 200) {
       
+      // console.log(result.index)
       // result = regexp.exec(str);
       // if (result !== null) {
+         
          set.add(result[0].toLowerCase());
       // }
-      result = regexp.exec(str);
+      
+      // result = regexp.exec(str);
       // i++;
    }
    // }
