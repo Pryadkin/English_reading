@@ -58,51 +58,55 @@ butExit.onclick = function() {
 
 function getAmountWords() {
    const amountWord = document.querySelector('.amountWord');
+   let arrayAllWords = [];
+   let wordObj = {};
    let set = new Set();
    let str = textArea.value.trim();
    let regexp = /\w+/ig;
 
 
 
+   // Присваиваем regexp.exec(str) переменной, т.к. любой лишний вызов (даже в console.log) повлияет на полученный результат
    let result;
-   // console.log(regexp.exec(str))
-   // console.log(regexp.lastIndex)
-   // let i = 0;
    while (result = regexp.exec(str)) {
-   // while (i < 200) {
-      
-      // console.log(result.index)
-      // result = regexp.exec(str);
-      // if (result !== null) {
-         
-         set.add(result[0].toLowerCase());
-      // }
-      
-      // result = regexp.exec(str);
-      // i++;
+      set.add(result[0].toLowerCase());
    }
-   // }
 
-   console.log(set)
+   for (let wordSet of set) {
+      var reg = new RegExp("" + wordSet +"", "gi");
+      let arrayWord = str.match(reg);
+
+      function Word(name, amount) {
+         this.name = name;
+         this.amount = amount;
+      }
+
+      let wordObj = new Word(arrayWord[0], arrayWord.length)
+
+      arrayAllWords.push(wordObj);
+   }
+
+   function sortWords(prop) {
+      arrayAllWords.sort((a, b) => {
+         if (isNaN(a[prop])) {
+            if (a[prop].toLowerCase() > b[prop].toLowerCase()) {
+               return 1;
+            } else return -1;
+         } else {
+            if (a[prop] < b[prop]) {
+               return 1;
+            } else return -1;
+         }
+      })
+   }
+   sortWords('amount');
 
 
 
+   console.log(arrayAllWords)
 
-   // console.log(result[0]);
-   // console.log(result.index);
-   // console.log(regexp.lastIndex);
 
-   // result = regexp.exec(str);
-  
-   // console.log(result);
-   // console.log(result.index);
-   // console.log(regexp.lastIndex);
-   // let result = textArea.value.match(/\w+/);
-
-   // console.log(result.index)
-   // console.log(textArea.value.match(/\w+/))
-
-   
-
-   
+   arrayAllWords.forEach((i) => {
+      amountWord.innerHTML += `<li>${i.name.toLowerCase()}(${i.amount})</li>`
+   })
 }
