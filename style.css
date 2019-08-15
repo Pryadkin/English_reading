@@ -1,11 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Alike+Angular|Cherry+Swash|Mali&display=swap');
 
+@font-face {
+   font-family: HPSimplified;
+   src: local(HPSimplified), url(/HPSimplified.ttf) format('ttf');
+   font-weight: 400;
+ }
+ 
+ @font-face {
+   font-family: HPSimplified_Rg;
+   src: local(HPSimplified_Rg), url(/HPSimplified_Rg.ttf) format('ttf');
+   font-weight: bold;
+ }
+
+ p {
+    font-family: "HPSimplified", sans-serif;
+    font-size: 20px;
+ }
+
 /*
 font-family: 'Mali', cursive;
 font-family: 'Cherry Swash', cursive;
 font-family: 'Alike Angular', serif;
 */
-
+* {
+   font-family: HPSimplified;
+}
 button {
    display: block;
 }
@@ -13,6 +32,13 @@ button {
 button a {
    text-decoration: none;
    color: black;
+}
+
+h1 {
+   font-family: 'Cherry Swash', cursive;
+   font-size: 40px;
+   display: flex;
+   justify-content: center;
 }
 
 .but {
@@ -54,10 +80,6 @@ button a {
    border-radius: 10px;
 }
 
-/* .words {
-
-} */
-
 .overlay {
    position: absolute;
    background-color: rgba(0, 0, 0, 0.8);
@@ -66,4 +88,29 @@ button a {
    height: 100%;
    top: 0;
    left: 0;
+}
+
+.color {
+   color: red;
+}
+
+.table {
+   display: flex;
+   flex-wrap: wrap;
+}
+/* внешние границы таблицы серого цвета толщиной 1px */
+table {
+   border: 1px solid grey;
+   border-collapse: collapse;
+   font-size: 24px;
+   margin: 20px 50px;
+}
+/* границы ячеек первого ряда таблицы */
+th {
+   border: 1px solid grey;
+   padding: 10px;
+}
+/* границы ячеек тела таблицы */
+td {
+   border: 1px solid grey;
 }
