@@ -25,11 +25,11 @@ font-family: 'Alike Angular', serif;
 * {
    font-family: HPSimplified;
 }
-button {
+.butViewMode {
    display: block;
 }
 
-button a {
+.butViewMode a {
    text-decoration: none;
    color: black;
 }

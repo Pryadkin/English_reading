@@ -1,19 +1,26 @@
 const
    textArea = document.querySelector('textarea'),
-   but = document.querySelector('button a'),
+   butViewMode = document.querySelector('.butViewMode a'),
+   butwordCount = document.querySelector('.butwordCount'),
    output = document.querySelector('.output'),
-   butChangeFonts = document.querySelector('.butChangeFonts'), 
-   butStartReading = document.querySelector('.butStartReading'), 
+   butChangeFonts = document.querySelector('.butChangeFonts'),
+   butStartReading = document.querySelector('.butStartReading'),
    hidden = document.querySelector('.hidden'),
    overlay = document.querySelector('.hidden'),
-   butExit = document.querySelector('.butExit');
+   butExit = document.querySelector('.butExit'),
+   butSort = document.querySelector('.butSort');
+
 
 let
-   arrayAllWords = [];
+   arrayAllWords = [],
+   sortProp = 'amount';
+
+textArea.oninput = function() {
+   butwordCount.removeAttribute("disabled");
+}
 
 
-
-but.onclick = () => {
+butViewMode.onclick = () => {
    textArea.value = textArea.value.replace(/\n/g, '<br>');
    textArea.value = textArea.value.replace(/�/g, '');
    output.innerHTML = textArea.value;
@@ -26,9 +33,17 @@ but.onclick = () => {
    // console.log(window)
    // element.scrollTop = '1000px';
    // console.log(element.scrollTop)
-   getAmountWords();
+
    getColorMarkWord();
 };
+
+
+butwordCount.onclick = () => {
+   getAmountWords();
+   if(textArea.value)
+   butwordCount.setAttribute("disabled", "disabled");
+}
+
 
 let i = 1;
 butChangeFonts.onclick = () => {
@@ -57,15 +72,22 @@ butStartReading.onclick = function move() {
    if (step < 5000) requestAnimationFrame(move);
 }
 
+
 butExit.onclick = function() {
    overlay.classList.add('hidden');
 }
 
-// function display defferent words
 
+butSort.onclick = function() {
+   sortProp === 'amount' ? "name" : 'amount';
+   sortWords(sortProp);
+}
+
+
+
+// function display defferent words
 function getAmountWords() {
-   const amountWord = document.querySelector('.amountWord');
-   let countAllWords = 0; //кол-во слов в тексте
+   let countAllWords = []; //кол-во слов в тексте
    let wordObj = {};
    let set = new Set();
    let str = textArea.value.trim();
@@ -75,7 +97,7 @@ function getAmountWords() {
    let result;
    while (result = regexp.exec(str)) {
       set.add(result[0].toLowerCase()); // result[0] - первый элемент этого массива - слово (оно нам и нужно)
-      countAllWords += result[0]; // счет количества слов в тексте
+      countAllWords.push(result[0]); // счет количества слов в тексте
    }
 
    for (let wordSet of set) {
@@ -91,7 +113,7 @@ function getAmountWords() {
       arrayAllWords.push(wordObj);
    }
 
-   sortWords('amount');
+   sortWords(sortProp);
 
    createTable(50);
 
@@ -101,7 +123,6 @@ function getAmountWords() {
       amountAllWords.innerHTML = `Amount all words: ${countAllWords.length}.`;
    }
 }
-
 
 
 // Сортировка

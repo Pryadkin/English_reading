@@ -9,6 +9,20 @@
 </head>
 <body>
 
+   <textarea name="text" cols="100" rows="10">
+      There was forest all round. All round for hundreds of kilometres. And there were no roads in the forest. 
+   </textarea>
+   <button class='butViewMode'><a href="#outputID">View mode</a></button><br>
+   <button class='butwordCount'>Words count</button>
+
+   <div>
+      <h1 class='amountAllWords'>Amount all words:</h1>
+      <button class='butSort'>Sort</button>
+      <div class='table'></div>
+   </div>
+
+
+
    <!-- Окно для чтения текста -->
    <div class="overlay hidden">
       <p id="outputID" class="output"></p>
@@ -18,19 +32,7 @@
    </div>
    <!-- End - Окно для чтения текста -->
 
-   <button><a href="#outputID">Кнопка</a></button><br>
-   <textarea name="text" cols="100" rows="10">
-      There was forest all round. All round for hundreds of kilometres. And there were no roads in the forest. There were only tracks.
-   Two tents stood in a clearing. Two men were standing near the tents. The younger man, Manuel, was making coffee on a small stove. He looked up at the sky.
-   Its going to rain today, he said.
-   I know, replied Leon. And the rain will turn the ground into mud. Then we�ll never get back to base.�
-   Four men were working in the forest. They were looking for iron and other metals. Leon was the boss and he was angry.
-   </textarea>
 
-   <div>
-      <h1 class='amountAllWords'>Amount all words:</h1>
-      <div class='table'></div>
-   </div>
 
 
    <script src="script.js"></script>
