@@ -12,6 +12,11 @@
    font-weight: bold;
  }
 
+ body {
+   background-image: url("luxfon.com-414.jpg");
+   background-color: #fff;
+}
+
  p {
     font-family: "HPSimplified", sans-serif;
     font-size: 20px;

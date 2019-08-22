@@ -5,6 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="colorRange.css">
    <title>English-reading</title>
 </head>
 <body>
@@ -31,11 +32,35 @@
       <button class="butStartReading but hidden">START</button>
    </div>
    <!-- End - Окно для чтения текста -->
+   <form class="colorRange">
+      <div>
+         <input type="range"             
+            min="0"
+            max="255"
+            data-num="a">  
+         <label for="red">Red</label>
+      </div> 
+      <div>       
+         <input type="range" 
+            min="0"
+            max="255"
+            data-num="b">   
+         <label for="green">Green</label>
+      </div>   
+      <div>    
+         <input type="range" 
+            min="0"
+            max="255"
+            data-num="c">       
+         <label for="blue">Blue</label>
+      </div>   
+   </form>
 
-
+   
 
 
    <script src="script.js"></script>
+   <script src="colorRange.js"></script>
 </body>
 </html>
 

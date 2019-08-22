@@ -1,0 +1,14 @@
+
+
+.colorRange div {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+.colorRange div label {
+    margin-left: 20px;
+}
+.colorRange div input {
+    width: 200px;
+}
+
